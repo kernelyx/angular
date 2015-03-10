@@ -1,0 +1,120 @@
+
+body {
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+  font: 14px "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  color: #666666;
+}
+
+
+#page-title {
+  color: #666666;
+  font-size: 32px;
+  line-height: 1.35;
+  padding: 20px 0;
+  text-align: center;
+  text-shadow: 0 1px 1px white;
+}
+
+
+img {
+  display: inline;
+  float: right;
+  padding-right: 8px;
+}
+
+.item:last-child {
+  padding-right: 0px;
+}
+
+
+#list {
+  width: 400px;
+  margin: 60px auto;
+}
+
+
+.item, .item-new {
+  background-color: #f9f9f9;
+  border: 1px solid #eeeeee;
+  border-radius: 6px 6px 6px 6px;
+  text-shadow: 1px 1px 0 white;
+  width: 400px;
+  height: 20px;
+  padding: 10px 0 10px 10px;
+  margin-top: 20px;
+}
+
+.item:hover, .item-new:hover {
+  border-color: #9be0f9;
+  box-shadow: 0 0 5px #a6d5fd;
+}
+
+
+.input, .update-input {
+  border: 1px solid #cccccc;
+  color: #666666;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  font-size: 15px;
+  width: 350px;
+  height: 19px;
+}
+
+.button {
+  float: right;
+  margin-right: 10px;
+  margin-top: 2px;
+}
+
+.check {
+  margin-left: 40px;
+}
+
+.update-input {
+  width: 300px;
+}
+
+.content {
+  color: #777777;
+  font-size: 1.2em;
+  text-shadow: 1px 1px 0 white;
+}
+
+.update-link {
+  display: inline;
+  float: left;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+  color: #666666;
+  text-decoration: none;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 15em;
+}
+
+.update-link:hover {
+  color: #333333;
+}
+
+
+.update-form {
+  display: inline;
+  float: left;
+}
+
+.check-todo {
+ float: left;
+}
+
+.check-completed {
+  text-decoration: line-through;
+  float: left;
+}
+
+
+.footer {
+
+  width: 100%;
+  text-align: center;
+  margin-top: 250px;
+}

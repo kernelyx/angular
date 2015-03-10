@@ -1,0 +1,73 @@
+<% layout( 'layout' ) -%>
+
+<h1 id="page-title"><%= title %></h1>
+<div id="list">
+  <form action="/create" method="post" accept-charset="utf-8">
+    <div class="item-new">
+      <input class="input" type="text" name="content" />
+      <input type="image" src="/images/png/plus-2x.png" alt="Submit" class="button">
+    </div>
+  </form>
+
+<% todos.forEach( function ( todo ){ %>
+  <% if( todo._id == current ){ %>
+  <div class="item-new">
+  <% }else{ %>
+  <div class="item">
+  <% } %>
+
+    <% if( todo._id == current ){ %>
+    <form class="update-form" action="/update/<%= todo._id %>" method="post" accept-charset="utf-8">
+      <input class="update-input" type="text" name="content" value="<%= todo.content %>" />
+      <input type="image" src="/images/png/check-2x.png" title="Update" class="check">
+    </form>
+    <% }else{ %>
+    <a class="update-link" href="/edit/<%= todo._id %>" title="Update this todo item"><%= todo.content %></a>
+    <% } %>
+
+    <% if( todo._id == current ){ %>
+
+    <a href="/destory/<%= todo._id %>" title="Delete">
+    <img class="del-btn" src="/images/png/x-2x.png">
+    </a>
+
+    <% }else{ %>
+
+ <% if( todo.status == "Completed" ){ %>
+
+
+
+ <a href="/destory/<%= todo._id %>" title="Delete">
+      <img class="del-btn" src="/images/png/trash-2x.png">
+    </a>
+
+    <a href="/edit/<%= todo._id %>" title="Edit">
+      <img class="edit-btn" src="/images/png/pencil-2x.png">
+    </a>
+
+    <a href="/checktodo/<%= todo._id %>" title="Edit">
+      <img class="check-btn" title="Unmark this todo done" src="/images/png/ban-2x.png">
+    </a>
+
+  <% }else{ %>
+
+
+
+ <a href="/destory/<%= todo._id %>" title="Delete">
+      <img class="del-btn" src="/images/png/trash-2x.png">
+    </a>
+
+    <a href="/edit/<%= todo._id %>" title="Edit">
+      <img class="edit-btn" src="/images/png/pencil-2x.png">
+    </a>
+
+    <a href="/completed/<%= todo._id %>" title="Edit">
+      <img class="check-btn" title="Mark this todo done" src="/images/png/task-2x.png">
+    </a>
+
+
+  <% } %>
+    <% } %>
+  </div>
+<% }); %>
+</div>

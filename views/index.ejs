@@ -1,0 +1,59 @@
+<% layout( 'layout' ) -%>
+
+<h1 id="page-title"><%= title %></h1>
+
+<div id="list">
+  <form action="/create" method="post" accept-charset="utf-8">
+    <div class="item-new">
+      <input class="input" type="text" name="content" />
+      <input type="image" src="/images/png/plus-2x.png" alt="Submit" class="button">
+    </div>
+
+  </form>
+
+<% todos.forEach( function ( todo ){ %>
+  <div class="item">
+  <% if( todo.status == "Completed" ){ %>
+
+
+  <div class="check-completed"> <%= todo.content %></div>
+
+ <a href="/destory/<%= todo._id %>" title="Delete">
+   		<img class="del-btn" src="/images/png/trash-2x.png">
+    </a>
+
+    <a href="/edit/<%= todo._id %>" title="Edit">
+    	<img class="edit-btn" src="/images/png/pencil-2x.png">
+    </a>
+
+    <a href="/checktodo/<%= todo._id %>" title="Edit">
+    	<img class="check-btn" title="Unmark this todo done" src="/images/png/ban-2x.png">
+    </a>
+
+  <% }else{ %>
+
+
+
+  <div class="check-todo"> <%= todo.content %></div>
+
+ <a href="/destory/<%= todo._id %>" title="Delete">
+   		<img class="del-btn" src="/images/png/trash-2x.png">
+    </a>
+
+    <a href="/edit/<%= todo._id %>" title="Edit">
+    	<img class="edit-btn" src="/images/png/pencil-2x.png">
+    </a>
+
+    <a href="/completed/<%= todo._id %>" title="Edit">
+    	<img class="check-btn" title="Mark this todo done" src="/images/png/task-2x.png">
+    </a>
+
+
+  <% } %>
+
+
+
+
+  </div>
+<% }); %>
+</div>
