@@ -13,22 +13,22 @@ var engine = require('ejs-locals');
 var routes = require('./routes');
 
 
+
+var port = process.env.PORT || 3000;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 //In order to use the layout
 app.engine('ejs', engine);
-// uncomment after placing your favicon in /public
-//app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-// app.use('/', routes);
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
-
+app.use( routes.current_user );
 app.get('/', routes.index);
 app.post('/create', routes.create);
 app.get('/destory/:id', routes.destory);
@@ -36,6 +36,8 @@ app.get('/edit/:id', routes.edit);
 app.post('/update/:id', routes.update);
 app.get('/completed/:id', routes.completed);
 app.get('/checktodo/:id', routes.checktodo);
+
+
 
 
 // catch 404 and forward to error handler
@@ -69,9 +71,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var server = app.listen(3000, function () {
+var server = app.listen(port, function () {
   var host = server.address().address
-  var port = server.address().port
   console.log('Example server listening at http://%s:%s', host, port)
 })
 

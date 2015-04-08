@@ -10,4 +10,7 @@ var Todo = new Schema({
 
 mongoose.model( 'Todo', Todo );
 
-mongoose.connect( 'mongodb://localhost/express-todo' );
+var mongoUrl = 'mongodb://hanweifish:victor@ds061391.mongolab.com:61391/todo-list';
+
+// mongoUrl = "mongodb://localhost/todo';
+mongoose.connect( mongoUrl );

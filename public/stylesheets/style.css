@@ -31,17 +31,18 @@ img {
 
 #list {
   width: 400px;
+  min-height: 220px;
   margin: 60px auto;
 }
 
 
 .item, .item-new {
+  overflow: hidden;
   background-color: #f9f9f9;
   border: 1px solid #eeeeee;
   border-radius: 6px 6px 6px 6px;
   text-shadow: 1px 1px 0 white;
   width: 400px;
-  height: 20px;
   padding: 10px 0 10px 10px;
   margin-top: 20px;
 }
@@ -103,10 +104,12 @@ img {
 }
 
 .check-todo {
- float: left;
+  width:320px;
+  float: left;
 }
 
 .check-completed {
+  width:320px;
   text-decoration: line-through;
   float: left;
 }
@@ -117,4 +120,6 @@ img {
   width: 100%;
   text-align: center;
   margin-top: 250px;
+  margin-bottom: 20px;
 }
+

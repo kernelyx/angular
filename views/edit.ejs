@@ -10,64 +10,54 @@
   </form>
 
 <% todos.forEach( function ( todo ){ %>
+
   <% if( todo._id == current ){ %>
   <div class="item-new">
-  <% }else{ %>
-  <div class="item">
-  <% } %>
-
-    <% if( todo._id == current ){ %>
-    <form class="update-form" action="/update/<%= todo._id %>" method="post" accept-charset="utf-8">
+  <form class="update-form" action="/update/<%= todo._id %>" method="post" accept-charset="utf-8">
       <input class="update-input" type="text" name="content" value="<%= todo.content %>" />
       <input type="image" src="/images/png/check-2x.png" title="Update" class="check">
     </form>
-    <% }else{ %>
-    <a class="update-link" href="/edit/<%= todo._id %>" title="Update this todo item"><%= todo.content %></a>
-    <% } %>
-
-    <% if( todo._id == current ){ %>
-
     <a href="/destory/<%= todo._id %>" title="Delete">
     <img class="del-btn" src="/images/png/x-2x.png">
     </a>
+    </div>
 
-    <% }else{ %>
-
- <% if( todo.status == "Completed" ){ %>
-
-
-
- <a href="/destory/<%= todo._id %>" title="Delete">
-      <img class="del-btn" src="/images/png/trash-2x.png">
-    </a>
-
-    <a href="/edit/<%= todo._id %>" title="Edit">
-      <img class="edit-btn" src="/images/png/pencil-2x.png">
-    </a>
-
-    <a href="/checktodo/<%= todo._id %>" title="Edit">
-      <img class="check-btn" title="Unmark this todo done" src="/images/png/ban-2x.png">
-    </a>
 
   <% }else{ %>
+  <div class="item">
+
+  <% if( todo.status == "Completed" ){ %>
 
 
+        <div class="check-completed"> <%= todo.content %></div>
+       <a href="/destory/<%= todo._id %>" title="Delete">
+            <img class="del-btn" src="/images/png/trash-2x.png">
+          </a>
 
- <a href="/destory/<%= todo._id %>" title="Delete">
-      <img class="del-btn" src="/images/png/trash-2x.png">
-    </a>
+          <a href="/edit/<%= todo._id %>" title="Edit">
+            <img class="edit-btn" src="/images/png/pencil-2x.png">
+          </a>
 
-    <a href="/edit/<%= todo._id %>" title="Edit">
-      <img class="edit-btn" src="/images/png/pencil-2x.png">
-    </a>
+          <a href="/checktodo/<%= todo._id %>" title="Edit">
+            <img class="check-btn" title="Unmark this todo done" src="/images/png/ban-2x.png">
+          </a>
+          </div>
+  <% }else{ %>
 
-    <a href="/completed/<%= todo._id %>" title="Edit">
-      <img class="check-btn" title="Mark this todo done" src="/images/png/task-2x.png">
-    </a>
+        <div class="check-todo"> <%= todo.content %></div>
+         <a href="/destory/<%= todo._id %>" title="Delete">
+              <img class="del-btn" src="/images/png/trash-2x.png">
+            </a>
 
+            <a href="/edit/<%= todo._id %>" title="Edit">
+              <img class="edit-btn" src="/images/png/pencil-2x.png">
+            </a>
 
+            <a href="/completed/<%= todo._id %>" title="Edit">
+              <img class="check-btn" title="Mark this todo done" src="/images/png/task-2x.png">
+            </a>
+            </div>
   <% } %>
-    <% } %>
-  </div>
+ <% } %>
 <% }); %>
 </div>
