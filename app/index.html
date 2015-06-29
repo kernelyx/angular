@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html ng-app="chummy">
+  <head>
+    <title>Chummy</title>
+    <meta charset='UTF-8'>
+    <meta property="og:site_name" content="Chummy">
+    <meta property="og:title" content="Chummy">
+    <meta property="og:url" content="http://www.chummy.com/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="http://www.chummy.com">
+    <link rel="shortcut icon" href="./imgs/logo_tag.png" type="image/png">
+    <link rel="stylesheet" href="lib/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app/css/app.css">
+  </head>
+
+  <body>
+    <div class="wrapper">
+        <div ng-include="'app/header/header.html'"></div>
+        <div ng-view></div>
+        <div ng-include="'app/footer/footer.html'"></div>
+    </div>
+
+    <script src="lib/jquery-2.1.4.min.js"></script>
+    <script src="lib/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-route.min.js"></script>
+    <script src="lib/angular-cookies.min.js"></script>
+
+    <script src="lib/imagesloaded.pkgd.js"></script>
+    <script src="lib/masonry-3.3.0/masonry.pkgd.min.js"></script>
+    <script src="lib/angular-masonry-customized.js"></script>
+    <script src="lib/ng-file-upload.js"></script>
+
+    <script src="lib/ui-bootstrap-tpls-0.13.0.min.js"></script>
+    <script src="lib/gm.datepickerMultiSelect.js"></script>
+
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+
+    <script src="app/index.js"></script>
+    <script src="app/header/header.js"></script>
+    <script src="app/footer/footer.js"></script>
+    <script src="app/tour/tour.js"></script>
+    <script src="app/user/user.js"></script>
+    <script src="app/contact/contact.js"></script>
+    <script src="app/admin/admin.js"></script>
+    <script src="app/main/main.js"></script>
+    <script src="app/feature/feature.js"></script>
+
+  
+  </body>
+</html>
