@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Personal blog based on angular(front end) and nodejs (backend)
 
 ## Overview
@@ -244,3 +245,7 @@ Requires a webserver that serves the application. See Running the app during dev
         servicesSpec.js    --> specs for services
 
 ## Contact
+=======
+# angular
+For angularJS application 
+>>>>>>> 5adacea8cb759b6309fe1a36d15e9d69168957b9
