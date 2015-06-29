@@ -2,7 +2,7 @@
   "name": "angular-phonecat",
   "description": "Build Personal blog with AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-phonecat",
+  "homepage": "https://github.com/kernelyx/angular/angular-blog",
   "license": "CCYu",
   "private": true,
   "dependencies": {

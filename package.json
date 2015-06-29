@@ -3,7 +3,7 @@
   "private": true,
   "name": "angular-blog",
   "description": "A personal application for AngularJS",
-  "repository": "https://github.com/angular/angular-blog",
+  "repository": "https://github.com/kernelyx/angular/angular-blog",
   "license": "CCYu",
   "devDependencies": {
     "karma": "^0.12.16",
