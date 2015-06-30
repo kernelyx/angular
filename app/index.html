@@ -2,7 +2,7 @@
 
 <html ng-app="chummy">
   <head>
-    <title>Chummy</title>
+    <title>CCYuS Blog</title>
     <meta charset='UTF-8'>
     <meta property="og:site_name" content="Chummy">
     <meta property="og:title" content="Chummy">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="app/css/app.css">
   </head>
 
-  <body>
+  <body ng-controller="BlogHomePageCtrl">
     <div class="wrapper">
         <div ng-include="'app/header/header.html'"></div>
         <div ng-view></div>
@@ -48,6 +48,14 @@
     <script src="app/main/main.js"></script>
     <script src="app/feature/feature.js"></script>
 
+    <ul>
+        <li>
+          <span>First Step</span>
+          <p>
+            Get the server working.
+          </p>
+        </li>
+    </ul>
   
   </body>
 </html>

@@ -3,8 +3,8 @@
   "private": true,
   "name": "angular-blog",
   "description": "A personal application for AngularJS",
-  "repository": "https://github.com/kernelyx/angular/angular-blog",
-  "license": "CCYu",
+  "repository": "https://github.com/angular/angular-phonecat",
+  "license": "MIT",
   "devDependencies": {
     "karma": "^0.12.16",
     "karma-chrome-launcher": "^0.1.4",

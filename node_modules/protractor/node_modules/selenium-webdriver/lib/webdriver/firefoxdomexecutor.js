@@ -18,7 +18,6 @@ goog.require('bot.response');
 goog.require('goog.json');
 goog.require('goog.userAgent.product');
 goog.require('webdriver.Command');
-goog.require('webdriver.CommandExecutor');
 goog.require('webdriver.CommandName');
 
 

@@ -21,12 +21,9 @@ var By = require('..').By,
 
 
 test.suite(function(env) {
-  var driver;
-  test.after(function() { driver.quit(); });
-
   test.it('should return lower case tag name', function() {
-    driver = env.builder().build();
-    driver.get(test.Pages.formPage);
-    assert(driver.findElement(By.id('cheese')).getTagName()).equalTo('input');
+    env.driver.get(test.Pages.formPage);
+    assert(env.driver.findElement(By.id('cheese')).getTagName()).
+        equalTo('input');
   });
 });

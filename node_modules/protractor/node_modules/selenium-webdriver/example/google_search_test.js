@@ -14,32 +14,37 @@
 // limitations under the License.
 
 /**
- * @fileoverview An example test that may be run using Mocha.
- * Usage: mocha -t 10000 selenium-webdriver/example/google_search_test.js
+ * @fileoverview An example test that may be run using Mocha. To run, you must
+ * have the chromedriver installed on the system PATH.
  */
 
+var assert = require('assert'),
+    fs = require('fs');
+
 var webdriver = require('..'),
-    By = webdriver.By,
-    until = webdriver.until,
-    test = require('../testing');
+    test = require('../testing'),
+    remote = require('../remote');
+
 
 test.describe('Google Search', function() {
   var driver;
 
   test.before(function() {
-    driver = new webdriver.Builder()
-        .forBrowser('firefox')
-        .build();
+    driver = new webdriver.Builder().
+        withCapabilities(webdriver.Capabilities.chrome()).
+        build();
   });
 
   test.it('should append query to title', function() {
     driver.get('http://www.google.com');
-    driver.findElement(By.name('q')).sendKeys('webdriver');
-    driver.findElement(By.name('btnG')).click();
-    driver.wait(until.titleIs('webdriver - Google Search'), 1000);
+    driver.findElement(webdriver.By.name('q')).sendKeys('webdriver');
+    driver.findElement(webdriver.By.name('btnG')).click();
+    driver.wait(function() {
+      return driver.getTitle().then(function(title) {
+        return 'webdriver - Google Search' === title;
+      });
+    }, 1000);
   });
 
-  test.after(function() {
-    driver.quit();
-  });
+  test.after(function() { driver.quit(); });
 });
