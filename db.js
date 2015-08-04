@@ -9,8 +9,8 @@ var Todo = new Schema({
 });
 
 mongoose.model( 'Todo', Todo );
-
-var mongoUrl = 'mongodb://hanweifish:victor@ds061391.mongolab.com:61391/todo-list';
+                
+var mongoUrl = 'mongodb://ciciyu:1111@ds047752.mongolab.com:47752/mongo1';
 
 // mongoUrl = "mongodb://localhost/todo';
 mongoose.connect( mongoUrl );
